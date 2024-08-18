@@ -45,9 +45,11 @@
     "@storybook/addon-links": "^8.0.2",
     "@storybook/addon-mdx-gfm": "^8.0.2",
     "@storybook/addon-onboarding": "^8.0.2",
+    "@storybook/addon-themes": "^8.2.9",
     "@storybook/blocks": "^8.0.2",
     "@storybook/react": "^8.0.2",
     "@storybook/react-vite": "^8.0.2",
+    "@storybook/theming": "^8.2.9",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@types/webfontloader": "^1.6.38",
@@ -75,5 +77,8 @@
     "webfontloader": "^1.6.28",
     "xmldom": "^0.6.0"
   },
-  "packageManager": "pnpm@8.15.4"
+  "packageManager": "pnpm@8.15.4",
+  "dependencies": {
+    "@storybook/addon-docs": "^8.2.9"
+  }
 }

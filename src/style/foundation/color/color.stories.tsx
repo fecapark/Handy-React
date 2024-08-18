@@ -1,4 +1,4 @@
-import { ColorItem, ColorPalette } from '@storybook/blocks';
+import { ColorPalette, ColorItem } from '@storybook/addon-docs';
 import { Meta, StoryObj } from '@storybook/react';
 import { styled } from 'styled-components';
 
@@ -9,6 +9,7 @@ const meta: Meta = {
   parameters: {
     layout: 'centered',
   },
+  tags: ['autodocs', '!dev'],
 };
 
 const StyledColorExample = styled.div`
@@ -19,7 +20,7 @@ const StyledColorExample = styled.div`
   background-color: ${({ theme }) => theme.semantic.color.bgBrandPrimary};
 `;
 
-const AllThemeColors = () => {
+const AllThemeColorsComponent = () => {
   const getSemanticColorPalette = (prefix: string) => {
     const colors: Record<string, string> = {};
 
@@ -63,10 +64,12 @@ const AllThemeColors = () => {
         return (
           <div>
             <h2>{section}</h2>
+
             <ColorPalette>
               {colors.map((color) => {
                 return (
                   <ColorItem
+                    key={color.title}
                     title={color.title}
                     subtitle="theme.semantic.color"
                     colors={color.colors}
@@ -86,5 +89,6 @@ const AllThemeColors = () => {
 const ColorExample: StoryObj = {
   render: () => <StyledColorExample>Color 색상</StyledColorExample>,
 };
+
 export default meta;
-export { ColorExample, AllThemeColors };
+export { ColorExample, AllThemeColorsComponent };
